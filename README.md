@@ -29,8 +29,7 @@ Nova/
 │── requirements.txt # List of required Python libraries
 │── README.md # Project description and usage guide
 
-yaml
-Copy code
+
 
 ---
 
@@ -97,4 +96,3 @@ Data: Synthetic driver dataset
 Steps: Data → EDA → Machine Learning → Fairness check
 
 Outputs: Visuals, metrics, and saved models
-
