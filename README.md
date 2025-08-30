@@ -18,16 +18,17 @@ The project is modular, so each part is handled by a separate file, and everythi
 
 ## 🗂️ Project Structure  
 
+```text
 Nova/
-│── data_gen.py # Generates synthetic driver data
-│── eda.py # Runs exploratory data analysis and saves graphs/stats
-│── train.py # Trains ML models and evaluates performance
-│── fairness.py # Checks fairness/bias of the models
-│── utils.py # Helper functions (keeps code clean)
-│── main.py # Orchestrates the full pipeline (run this to execute all steps)
-│── outputs/ # Stores generated datasets, graphs, and trained models
+│── data_gen.py      # Generates synthetic driver data
+│── eda.py           # Runs exploratory data analysis and saves graphs/stats
+│── train.py         # Trains ML models and evaluates performance
+│── fairness.py      # Checks fairness/bias of the models
+│── utils.py         # Helper functions (keeps code clean)
+│── main.py          # Orchestrates the full pipeline (run this to execute all steps)
+│── outputs/         # Stores generated datasets, graphs, and trained models
 │── requirements.txt # List of required Python libraries
-│── README.md # Project description and usage guide
+│── README.md        # Project description and usage guide
 
 
 
