@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Outputs and generated files
+outputs/
+*.csv
+*.joblib
+*.png
+*.json
+
+# VS Code settings
+.vscode/
+
+
+# OS-specific files
+.DS_Store
+Thumbs.db
