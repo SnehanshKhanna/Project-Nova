@@ -1,148 +1,100 @@
-🚀 Project Nova — Equitable Credit Scoring
+# 🌟 Project Nova  
 
-Hackathon Project | Machine Learning + Fairness in AI
+**Synthetic Data Generation, EDA, and Machine Learning Models for Performance Prediction**  
 
-📌 Overview
+---
 
-Many gig economy workers are considered “credit invisible” because they lack traditional financial histories (like bank loans or credit cards).
-Project Nova aims to create an equitable, data-driven credit scoring engine that generates a Nova Score (300–850) using alternative data such as:
+## 📌 Project Overview  
+This project shows a complete **data science pipeline** from start to finish.  
+Since we don’t have real-world data, we generate **synthetic (fake but realistic) data** about drivers, then:  
 
-Earnings history
+1. **Analyze it** with exploratory data analysis (EDA)  
+2. **Train machine learning models** to predict performance  
+3. **Check fairness** of the models across groups (like gender or region)  
 
-Trip frequency
+The project is modular, so each part is handled by a separate file, and everything can also be run end-to-end with a single script.  
 
-Customer ratings
+---
 
-Driving/merchant behavior
+## 🗂️ Project Structure  
 
-The model also includes a fairness analysis to ensure that demographic factors (e.g., gender, region) do not unfairly penalize workers.
+Nova/
+│── data_gen.py # Generates synthetic driver data
+│── eda.py # Runs exploratory data analysis and saves graphs/stats
+│── train.py # Trains ML models and evaluates performance
+│── fairness.py # Checks fairness/bias of the models
+│── utils.py # Helper functions (keeps code clean)
+│── main.py # Orchestrates the full pipeline (run this to execute all steps)
+│── outputs/ # Stores generated datasets, graphs, and trained models
+│── requirements.txt # List of required Python libraries
+│── README.md # Project description and usage guide
 
-✨ Features
+yaml
+Copy code
 
-✅ Synthetic Dataset Generator (~10k samples of simulated Grab partners)
+---
 
-✅ Exploratory Data Analysis (EDA) with histograms & correlation heatmap
+## ⚙️ How It Works  
 
-✅ Machine Learning Models: Logistic Regression & Random Forest
+1. **`data_gen.py`** → Creates synthetic driver dataset (features like income, trips, ratings, etc.).  
+2. **`eda.py`** → Runs EDA and generates plots (distributions, correlations, etc.).  
+3. **`train.py`** → Trains Logistic Regression and Random Forest models, outputs metrics (accuracy, AUC, precision, recall).  
+4. **`fairness.py`** → Checks whether the models are fair across groups (e.g., gender, region).  
+5. **`main.py`** → Runs everything in sequence:  
+   - Generate data  
+   - Perform EDA  
+   - Train models  
+   - Run fairness checks  
 
-✅ Fairness Metrics: Demographic Parity & Equal Opportunity differences
+---
 
-✅ Bias Mitigation: Reweighting of training samples for fairer predictions
+## 📊 Example Outputs  
 
-✅ Nova Score Mapping: Predicted probabilities → Score (300–850 scale)
+- **EDA Graphs**: Histograms, correlation heatmaps  
+- **Model Performance**: Accuracy, AUC, precision/recall  
+- **Fairness Analysis**: Metrics split by groups  
 
-✅ Artifacts Saved: Models, CSVs, JSON fairness summary, plots
+All results are saved in the `outputs/` folder.  
 
-📂 Project Structure
-Project-Nova/
-│── main.py                # Entry point – runs the full pipeline
-│── data_gen.py            # Synthetic dataset generation
-│── eda.py                 # Exploratory Data Analysis
-│── train.py               # Model training & evaluation
-│── fairness.py            # Fairness metrics & bias analysis
-│── utils.py               # Helper utilities (Nova score mapping, etc.)
-│── requirements.txt       # Dependencies
-│── README.md              # Project documentation
-│── LICENSE                # License file (MIT recommended)
-│── outputs/               # Generated graphs, models, CSVs (ignored in Git)
+---
 
-⚙️ Setup & Installation
-1️⃣ Clone the repository
-git clone https://github.com/YOUR_USERNAME/Project-Nova.git
-cd Project-Nova
+## 🚀 How to Run  
 
-2️⃣ Create virtual environment (recommended)
-# Windows (PowerShell)
-python -m venv venv
-.\venv\Scripts\activate
+1. Clone the repo or download the folder.  
+2. Install dependencies:  
 
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-3️⃣ Install dependencies
+```bash
 pip install -r requirements.txt
-
-▶️ Usage
-
 Run the full pipeline:
 
+bash
+Copy code
 python main.py
+Check the outputs/ folder for graphs, CSV files, and trained models.
 
+🛠️ Requirements
+Key libraries used in the project:
 
-Outputs will be saved to the outputs/ folder:
+pandas
 
-synthetic_partners.csv → generated dataset
+numpy
 
-hist_*.png → histograms of features
+matplotlib
 
-corr_heatmap.png → feature correlation matrix
+seaborn
 
-region_means.csv → average values per region
+scikit-learn
 
-predictions_sample.csv → predicted Nova scores vs true values
+joblib
 
-fairness_summary.json → fairness metrics report
+(Full list is in requirements.txt)
 
-Trained models (.joblib)
+✨ In Short
+Goal: Demonstrate an end-to-end data science workflow
 
-📊 Example Outputs
-Distribution of Nova Scores
+Data: Synthetic driver dataset
 
-Feature Correlation Heatmap
+Steps: Data → EDA → Machine Learning → Fairness check
 
-(Note: Add these screenshots once you have them in your outputs/ folder.)
+Outputs: Visuals, metrics, and saved models
 
-🔍 Fairness in AI
-
-The project analyzes:
-
-Demographic Parity Difference → measures difference in loan approval rates across groups.
-
-Equal Opportunity Difference → compares true positive rates across groups.
-
-➡️ Example: Ensuring female/rural workers are not unfairly penalized compared to male/urban workers with similar reliability.
-
-🛠️ Tech Stack
-
-Python 3.8+
-
-Libraries:
-
-numpy, pandas → data handling
-
-scikit-learn → ML models & preprocessing
-
-matplotlib, seaborn → visualizations
-
-fairlearn (optional) → fairness analysis
-
-joblib → model persistence
-
-📌 Future Improvements
-
-🔹 Advanced fairness techniques (adversarial debiasing, equalized odds post-processing)
-
-🔹 Explainability with SHAP values for feature importance
-
-🔹 Integration into a simple API (Flask/FastAPI) for real-time scoring
-
-🔹 Deployment on cloud (Heroku, AWS, or Streamlit app demo)
-
-📜 License
-
-This project is licensed under the MIT License – see the LICENSE
- file for details.
-
-🤝 Contributing
-
-Pull requests are welcome.
-For major changes, please open an issue first to discuss what you would like to change.
-
-🙌 Acknowledgments
-
-Hackathon problem statement inspiration from Grab / Project Nova
-
-Libraries: Scikit-learn
-, Fairlearn
-, Seaborn
